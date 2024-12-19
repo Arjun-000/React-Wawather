@@ -61,7 +61,7 @@ const App = () => {
           backgroundImage: `url(${getBackgroundImage()})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          minHeight: "100vh",
+          minHeight: "80vh",
           color: "#fff",
         }}
       >
