@@ -55,40 +55,41 @@ const App = () => {
   };
 
   return (
-    <div
-      className="container text-center"
-      style={{
-        backgroundImage: `url(${getBackgroundImage()})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        minHeight: "100vh",
-        color: "#fff",
-      }}
-    >
+    <div className="container text-center">
       <h1 className="mt-5">Weather App</h1>
-      <div className="card mx-auto mt-4 p-3" style={{ maxWidth: "400px" }}>
-        <input
-          type="text"
-          className="form-control mb-3"
-          placeholder="Enter city name"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-        />
-        <button className="btn btn-primary" onClick={fetchWeather}>
-          Get Weather
-        </button>
-
-        {error && <p className="text-danger mt-3">{error}</p>}
-
-        {weatherData && (
-          <div className="mt-4">
-            <h3>{weatherData.name}</h3>
-            <p>Temperature: {weatherData.main.temp}°C</p>
-            <p>Condition: {weatherData.weather[0].description}</p>
-            <p>Humidity: {weatherData.main.humidity}%</p>
-            <p>Wind Speed: {weatherData.wind.speed} m/s</p>
-          </div>
-        )}
+      <div className="rounded p-2"        style={{
+          backgroundImage: `url(${getBackgroundImage()})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          minHeight: "100vh",
+          color: "#fff",
+        }}
+      >
+        
+        <div className="card mx-auto mt-4 p-3" style={{ maxWidth: "400px" }}>
+          <input
+            type="text"
+            className="form-control mb-3"
+            placeholder="Enter city name"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
+          <button className="btn btn-primary" onClick={fetchWeather}>
+            Get Weather
+          </button>
+  
+          {error && <p className="text-danger mt-3">{error}</p>}
+  
+          {weatherData && (
+            <div className="mt-4">
+              <h3>{weatherData.name}</h3>
+              <p>Temperature: {weatherData.main.temp}°C</p>
+              <p>Condition: {weatherData.weather[0].description}</p>
+              <p>Humidity: {weatherData.main.humidity}%</p>
+              <p>Wind Speed: {weatherData.wind.speed} m/s</p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
